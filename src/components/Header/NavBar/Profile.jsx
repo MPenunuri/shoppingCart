@@ -10,6 +10,7 @@ export default function Profile() {
       setImageSrc(img.default);
     })();
   }, []);
+
   return (
     <button className={styles.profileBtn}>
       <img src={imgSrc} alt="User icon" className={styles.userIcon} />

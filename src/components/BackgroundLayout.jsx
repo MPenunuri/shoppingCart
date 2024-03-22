@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled, { StyleSheetManager } from "styled-components";
 
 const BackgroundContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

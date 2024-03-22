@@ -1,10 +1,11 @@
 import NavBar from "./Header/NavBar.jsx";
 import "./Header/Header.css";
 
-export default function Header() {
+function Header() {
   return (
     <header>
       <NavBar />
     </header>
   );
 }
+export default Header;

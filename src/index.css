@@ -10,12 +10,15 @@
 body {
   margin: 0;
   font-family: "Montserrat", "Courier New", Courier, monospace;
+  color: var(--main-static-color);
+  background-color: var(--sec-static-color);
+}
+
+#root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--main-static-color);
-  background-color: var(--sec-static-color);
 }
 
 input,
