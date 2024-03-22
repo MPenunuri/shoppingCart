@@ -1,0 +1,27 @@
+nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 2200px;
+  border-radius: 40px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 4px var(--sec-effect-color);
+  outline: none;
+  background-color: var(--sec-static-color);
+}
+
+@media (max-width: 1200px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+h1 {
+  font-size: calc(15px + 1vw);
+  text-align: center;
+  white-space: nowrap;
+  margin: 1rem;
+}

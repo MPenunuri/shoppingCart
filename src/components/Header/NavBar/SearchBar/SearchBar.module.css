@@ -1,0 +1,24 @@
+.form {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 80vw;
+  }
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.searchInput {
+  width: 90%;
+}

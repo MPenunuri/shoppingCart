@@ -1,0 +1,58 @@
+:root {
+  --main-static-color: rgb(46, 41, 129);
+  --sec-static-color: rgb(215, 212, 250);
+  --ter-static-color: rgb(218, 217, 242);
+  --main-effect-color: rgb(54, 42, 165);
+  --sec-effect-color: rgb(36, 28, 108);
+  color: var(--main-static-color);
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-static-color);
+  background-color: var(--sec-static-color);
+}
+
+input,
+button {
+  text-align: center;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+  font-size: 15px;
+  border-style: none;
+  border-radius: 40px;
+  border: 2px solid var(--main-effect-color);
+  padding: 0.5rem;
+  color: var(--main-static-color);
+  font-weight: 600;
+  background-color: var(--ter-static-color);
+}
+
+input:hover {
+  cursor: text;
+}
+
+input:hover,
+input:focus {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 2px var(--sec-effect-color);
+  filter: drop-shadow(6px 2px 6px var(--main-static-color));
+  transition: all 0.5s ease;
+  outline: none;
+}
+
+button {
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 2px var(--sec-effect-color);
+  filter: drop-shadow(6px 2px 6px var(--main-static-color));
+  transition: all 0.5s ease;
+}
