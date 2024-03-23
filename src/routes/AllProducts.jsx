@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProductsContext } from "../components/ProductsContextProvider.jsx";
 import Products from "../components/Products.jsx";
 
@@ -10,11 +10,12 @@ export default function AllProducts() {
   const { isPending, error, data } = useQuery({
     queryKey: ["allProductsData"],
     queryFn: () =>
-      axios
-        .get("https://fakestoreapi.com/products")
-        .then((res) => res.data)
-        .then(dispatch({ type: "GET_ALL_PRODUCTS", payload: data })),
+      axios.get("https://fakestoreapi.com/products").then((res) => res.data),
   });
+
+  useEffect(() => {
+    dispatch({ type: "GET_ALL_PRODUCTS", payload: data });
+  }, [data, dispatch]);
 
   if (isPending) return "Loading...";
 

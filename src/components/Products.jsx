@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Products/Products.module.css";
+import Product from "./Products/Product.jsx";
 
 export default function Products({ products }) {
   Products.propTypes = {
@@ -9,12 +10,7 @@ export default function Products({ products }) {
   return (
     <section aria-label="Catalog of products" className={styles.section}>
       {products.map((product) => {
-        return (
-          <article key={product.id} className={styles.article}>
-            <img src={product.image} alt="product picture" />
-            <p>{product.title}</p>
-          </article>
-        );
+        return <Product product={product} key={product.id} />;
       })}
     </section>
   );
