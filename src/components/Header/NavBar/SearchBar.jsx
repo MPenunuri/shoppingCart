@@ -16,7 +16,7 @@ function SearchBar() {
     });
     dispatch({ type: "SET_FILTERED_PRODUCTS", payload: arr });
     inputVal.length > 0
-      ? navigate(`/products/category/${currentCategory}/by/${inputVal}`)
+      ? navigate(`/products/category/${currentCategory}/filter/${inputVal}`)
       : currentCategory === "all"
       ? navigate("/products")
       : navigate(`/products/category/${currentCategory}`);

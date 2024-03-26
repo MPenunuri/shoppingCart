@@ -9,7 +9,6 @@ nav {
   border-radius: 40px;
   border: 2px solid var(--main-effect-color);
   box-shadow: 4px 4px 4px var(--sec-effect-color);
-  outline: none;
   background-color: var(--sec-static-color);
 }
 

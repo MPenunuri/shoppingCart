@@ -18,12 +18,12 @@
   width: 6rem;
   padding: 0.5rem;
   border-radius: 40px;
-  opacity: 0;
+  visibility: hidden;
   transition: opacity 1s ease 0s;
 }
 
 .viewCategoriesBtn:hover > .tooltip {
-  opacity: 1;
+  visibility: visible;
 }
 
 .viewCategoriesBtn:hover > .icon {

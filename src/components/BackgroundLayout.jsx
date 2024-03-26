@@ -9,7 +9,7 @@ const BackgroundContainer = styled.div`
   height: 100%;
   background-image: ${(props) =>
     props.imgsrc ? `url(${props.imgsrc})` : "none"};
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: top;
   z-index: -1;
 `;
