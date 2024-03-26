@@ -11,7 +11,7 @@ function ProductsContextProvider({ children }) {
 
   const initialState = {
     allProducts: [],
-    currentCategory: "",
+    currentCategory: "all",
     filteredProducts: [],
   };
 

@@ -8,6 +8,7 @@ import ErrorPage from "./routes/ErrorPage.jsx";
 import AllProducts from "./routes/AllProducts.jsx";
 import ProductDetails from "./routes/ProductDetails.jsx";
 import CategoryProducts from "./routes/CategoryProducts.jsx";
+import FilteredProducts from "./routes/FilteredProducts.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export default function Router() {
         { index: true, element: <AllProducts /> },
         { path: "product/:id", element: <ProductDetails /> },
         { path: "category/:name", element: <CategoryProducts /> },
+        {
+          path: "category/:current/by/:input",
+          element: <FilteredProducts />,
+        },
       ],
     },
     {
