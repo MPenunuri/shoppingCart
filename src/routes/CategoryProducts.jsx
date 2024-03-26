@@ -1,18 +1,22 @@
+import { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useContext, useEffect } from "react";
-import { ProductsContext } from "../components/ProductsContextProvider.jsx";
 import Products from "../components/Products.jsx";
 import Loading from "../components/Loading.jsx";
+import { ProductsContext } from "../components/ProductsContextProvider.jsx";
 
-export default function AllProducts() {
-  const { dispatch } = useContext(ProductsContext);
-
+export default function CategoryProducts() {
+  const { name } = useParams();
   const { isPending, error, data } = useQuery({
-    queryKey: ["allProductsData"],
+    queryKey: [`category_${name}_data`],
     queryFn: () =>
-      axios.get("https://fakestoreapi.com/products").then((res) => res.data),
+      axios
+        .get(`https://fakestoreapi.com/products/category/${name}`)
+        .then((res) => res.data),
   });
+
+  const { dispatch } = useContext(ProductsContext);
 
   useEffect(() => {
     dispatch({ type: "SET_ALL_PRODUCTS", payload: data });

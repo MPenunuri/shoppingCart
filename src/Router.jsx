@@ -6,7 +6,8 @@ import {
 import Layout from "./routes/Layout.jsx";
 import ErrorPage from "./routes/ErrorPage.jsx";
 import AllProducts from "./routes/AllProducts.jsx";
-import ProductDetails from "./components/Products/ProductDetails.jsx";
+import ProductDetails from "./routes/ProductDetails.jsx";
+import CategoryProducts from "./routes/CategoryProducts.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -17,6 +18,7 @@ export default function Router() {
       children: [
         { index: true, element: <AllProducts /> },
         { path: "product/:id", element: <ProductDetails /> },
+        { path: "category/:name", element: <CategoryProducts /> },
       ],
     },
     {

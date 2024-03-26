@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import styles from "./ProductDetails.module.css";
+import Loading from "../Loading.jsx";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ export default function ProductDetails() {
         .then((res) => res.data),
   });
 
-  if (isPending) return "Loading...";
+  if (isPending) return <Loading />;
 
   if (error) return "An error has occurred: " + error.message;
 
@@ -31,7 +32,13 @@ export default function ProductDetails() {
       </div>
       <div className={styles.gridsContainer}>
         <div className={styles.propGrid}>
-          <p>Category:</p>
+          <p id="priceLabel">Price:</p>
+          <p id="price" aria-labelledby="priceLabel">
+            {data.price}
+          </p>
+        </div>
+        <div className={styles.propGrid}>
+          <p id="categoryLabel">Category:</p>
           <p id="category" aria-labelledby="categoryLabel">
             {data.category
               .charAt(0)
@@ -40,7 +47,7 @@ export default function ProductDetails() {
           </p>
         </div>
         <div className={styles.propGrid}>
-          <p>Rating ({data.rating.count}):</p>
+          <p id="ratingLabel">Rating ({data.rating.count}):</p>
           <p id="rating" aria-labelledby="ratingLabel">
             {data.rating.rate}
           </p>

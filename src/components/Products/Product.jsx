@@ -27,7 +27,7 @@ export default function Product({ product }) {
       <img src={product.image} alt="product picture" />
       <p>{product.title}</p>
       <div className={styles.btnsContainer}>
-        <Link to={`./product/${product.id}`}>
+        <Link to={`/products/product/${product.id}`}>
           <button
             type="button"
             aria-label="View details button"

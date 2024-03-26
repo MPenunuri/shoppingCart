@@ -1,0 +1,77 @@
+.viewCategoriesBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon {
+  width: 2rem;
+}
+
+.tooltip {
+  position: absolute;
+  right: 60px;
+  background-color: var(--main-static-color);
+  box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
+  color: var(--sec-static-color);
+  width: 6rem;
+  padding: 0.5rem;
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.viewCategoriesBtn:hover > .tooltip {
+  opacity: 1;
+}
+
+.viewCategoriesBtn:hover > .icon {
+  filter: drop-shadow(2px 2px 1px var(--main-effect-color));
+}
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  right: 2px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 40px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 20px 20px var(--sec-effect-color);
+  background-color: var(--sec-static-color);
+}
+
+h3 {
+  margin: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -2%;
+  left: 85%;
+  z-index: 3;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.closeBtn:hover {
+  box-shadow: 4px 4px 20px 0px brown;
+  filter: drop-shadow(2px 2px 1px brown);
+  border: 2px solid brown;
+  color: brown;
+  transition: all 1s ease;
+}
+
+.Active {
+  text-decoration: underline;
+  background-color: var(--main-static-color);
+  box-shadow: 4px 4px 2px var(--sec-effect-color);
+  color: var(--sec-static-color);
+}
