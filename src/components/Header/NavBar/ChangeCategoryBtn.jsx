@@ -23,7 +23,7 @@ export default function ChangeCategoryBtn() {
         .then((res) => res.data),
   });
 
-  if (isPending) return "Loading...";
+  if (isPending) <div>...</div>;
 
   if (error) return "An error has occurred: " + error.message;
 

@@ -10,6 +10,8 @@ import AllProducts from "./routes/AllProducts.jsx";
 import ProductDetails from "./routes/ProductDetails.jsx";
 import CategoryProducts from "./routes/CategoryProducts.jsx";
 import FilteredProducts from "./routes/FilteredProducts.jsx";
+import User from "./routes/User.jsx";
+import Cart from "./routes/Cart.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -31,6 +33,15 @@ export default function Router() {
           path: "category/:current/filter/:input",
           element: <FilteredProducts />,
         },
+      ],
+    },
+    {
+      path: "/user",
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+      children: [
+        { index: true, element: <User /> },
+        { path: "cart", element: <Cart /> },
       ],
     },
     {

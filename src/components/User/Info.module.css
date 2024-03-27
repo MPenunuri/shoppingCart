@@ -1,0 +1,57 @@
+.infoContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  margin: 1rem;
+  padding: 2rem 0;
+  background-color: var(--sec-static-color);
+  border-radius: 20px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 4px var(--sec-effect-color);
+}
+
+.propGrid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 1rem;
+  border-radius: 20px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 4px var(--sec-effect-color);
+  padding: 0.5rem;
+}
+
+.propGrid > p {
+  margin: 0.5rem;
+  overflow-wrap: break-word;
+  font-size: 1rem;
+}
+
+.propGrid > p:nth-child(1) {
+  font-weight: bolder;
+}
+
+@media (max-width: 1200px) {
+  .profileContainer {
+    width: 95vw;
+  }
+
+  .profileContainer > div {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .gridsContainer {
+    width: 95%;
+  }
+}

@@ -1,0 +1,56 @@
+#root {
+  height: 100vw;
+}
+
+.profileContainer {
+  margin: 2rem;
+  margin-bottom: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  text-align: center;
+  width: 80vw;
+  min-height: 70vh;
+  max-width: 800px;
+  background-color: var(--sec-static-color);
+  border-radius: 20px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 4px var(--sec-effect-color);
+}
+
+.viewCartBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 10px;
+  width: 10rem;
+}
+
+.viewCartBtn > img {
+  width: 2rem;
+}
+
+.tooltip {
+  position: absolute;
+  right: 11rem;
+  background-color: var(--main-static-color);
+  box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
+  color: var(--sec-static-color);
+  width: 6rem;
+  padding: 0.5rem;
+  border-radius: 40px;
+  visibility: hidden;
+  transition: opacity 1s ease 0s;
+}
+
+.viewCartBtn:hover > .tooltip {
+  visibility: visible;
+}
+
+.viewCartBtn:hover > img {
+  filter: drop-shadow(2px 2px 1px var(--main-effect-color));
+}

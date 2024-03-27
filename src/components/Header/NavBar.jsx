@@ -13,11 +13,13 @@ export default function NavBar() {
   return (
     <nav>
       <h1>Shooping App</h1>
-      {(visitor && <SearchBar />) || (user && <SearchBar />)}
       {location.pathname !== "/home" && (
-        <Profile user={user} visitor={visitor} />
+        <>
+          <SearchBar />
+          <Profile user={user} visitor={visitor} />
+          <ChangeCategoryBtn />
+        </>
       )}
-      {(visitor && <ChangeCategoryBtn />) || (user && <ChangeCategoryBtn />)}
     </nav>
   );
 }

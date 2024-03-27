@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./Profile/Profile.module.css";
 
-export default function Profile({ user, visitor }) {
+export default function Profile({ user }) {
   Profile.propTypes = {
-    user: PropTypes.bool,
-    visitor: PropTypes.bool,
+    user: PropTypes.object,
   };
 
   const [imgSrc, setImageSrc] = useState();
@@ -17,18 +17,27 @@ export default function Profile({ user, visitor }) {
     })();
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <>
-      {visitor && (
-        <button className={styles.profileBtn}>
+      {user ? (
+        <button
+          className={styles.profileBtn}
+          aria-label="view user data"
+          onClick={() => navigate("/user")}
+        >
+          <img src={imgSrc} alt="User icon" className={styles.userIcon} />
+          <p>{user.username}</p>
+        </button>
+      ) : (
+        <button
+          className={styles.profileBtn}
+          aria-label="login"
+          onClick={() => navigate("/home")}
+        >
           <img src={imgSrc} alt="User icon" className={styles.userIcon} />
           <p>Login</p>
-        </button>
-      )}
-      {user && (
-        <button className={styles.profileBtn}>
-          <img src={imgSrc} alt="User icon" className={styles.userIcon} />
-          <p>UserName</p>
         </button>
       )}
     </>
