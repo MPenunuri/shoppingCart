@@ -4,13 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loading from "../Loading.jsx";
 import CartItem from "./UserCart/CartItem.jsx";
-import styles from "./UserCart.module.css";
+import styles from "./UserCart/UserCart.module.css";
 
 export default function UserCart() {
-  const { state } = useContext(UserContext);
-  const { user } = state;
+  const { state, dispatch } = useContext(UserContext);
+  const { user, cart } = state;
 
-  const [cart, setCart] = useState([]);
+  const [userCart, setCart] = useState();
 
   const capitalize = (str) => {
     return str.charAt(0).toUpperCase().concat(str.slice(1));
@@ -23,11 +23,11 @@ export default function UserCart() {
   });
 
   useEffect(() => {
-    const userCart = data.find((i) => {
+    const uCart = data.find((i) => {
       return user.id === i.userId;
     });
-    setCart(userCart);
-  }, [data, cart, user]);
+    setCart(uCart);
+  }, [data, userCart, user]);
 
   if (isPending) return <Loading />;
 
@@ -38,9 +38,17 @@ export default function UserCart() {
       <h2>{`Hi, ${capitalize(user.name.firstname)} ${capitalize(
         user.name.lastname
       )}! This is your shopping list:`}</h2>
-      {cart.products.length > 0 &&
-        cart.products.map((i) => {
-          return <CartItem key={i.productId} />;
+      {userCart &&
+        userCart.products.map((i) => {
+          return (
+            <CartItem
+              key={i.productId}
+              product={i}
+              capitalize={capitalize}
+              cart={cart}
+              dispatch={dispatch}
+            />
+          );
         })}
     </section>
   );

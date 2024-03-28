@@ -12,7 +12,7 @@ export default function NavBar() {
   const location = useLocation();
   return (
     <nav>
-      <h1>Shooping App</h1>
+      <h1>Shopping App</h1>
       {location.pathname !== "/home" && (
         <>
           <SearchBar />
