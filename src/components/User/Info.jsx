@@ -10,7 +10,7 @@ export default function Info({ user, capitalize }) {
     <div aria-hidden="true" className={styles.infoContainer}>
       <div className={styles.gridsContainer} aria-hidden="true">
         <div className={styles.propGrid} aria-hidden="true">
-          <p id="usernameLabel">User name:</p>
+          <p id="usernameLabel">User:</p>
           <p id="username" aria-labelledby="userLabel">
             {user.username}
           </p>

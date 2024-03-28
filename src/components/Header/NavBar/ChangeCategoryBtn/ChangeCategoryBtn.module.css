@@ -11,7 +11,7 @@
 
 .tooltip {
   position: absolute;
-  right: 60px;
+  left: 60px;
   background-color: var(--main-static-color);
   box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
   color: var(--sec-static-color);
@@ -19,7 +19,6 @@
   padding: 0.5rem;
   border-radius: 40px;
   visibility: hidden;
-  transition: opacity 1s ease 0s;
 }
 
 .viewCategoriesBtn:hover > .tooltip {
@@ -49,6 +48,7 @@
 
 h3 {
   margin: 0;
+  text-align: center;
 }
 
 .closeBtn {

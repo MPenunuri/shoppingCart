@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {user ? (
-        <Navigate to="/products" replace={true} />
+        <Navigate to="/home/cart/setup" replace={true} />
       ) : (
         <Login state={state} dispatch={dispatch} />
       )}

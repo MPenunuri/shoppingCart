@@ -12,7 +12,7 @@ function UserContextProvider({ children }) {
   const initialState = {
     visitor: false,
     user: null,
-    cart: [],
+    cart: null,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

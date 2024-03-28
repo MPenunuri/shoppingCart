@@ -19,6 +19,7 @@ export default function Inputs({ styles, userValidation }) {
         name="user"
         aria-label="user input"
         placeholder="Enter email or user name"
+        autoComplete="username"
         required
       />
       <label htmlFor="psw" className={styles.label}>
@@ -32,6 +33,7 @@ export default function Inputs({ styles, userValidation }) {
         name="password"
         aria-label="password input"
         placeholder="********"
+        autoComplete="current-password"
         required
       />
     </>

@@ -12,6 +12,7 @@ import CategoryProducts from "./routes/CategoryProducts.jsx";
 import FilteredProducts from "./routes/FilteredProducts.jsx";
 import User from "./routes/User.jsx";
 import Cart from "./routes/Cart.jsx";
+import SetUserCart from "./routes/SetUserCart.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -19,7 +20,10 @@ export default function Router() {
       path: "/home",
       element: <Layout />,
       errorElement: <ErrorPage />,
-      children: [{ index: true, element: <Home /> }],
+      children: [
+        { index: true, element: <Home /> },
+        { path: "cart/setup", element: <SetUserCart /> },
+      ],
     },
     {
       path: "/products",

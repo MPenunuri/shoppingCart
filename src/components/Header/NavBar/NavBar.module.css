@@ -24,3 +24,10 @@ h1 {
   white-space: nowrap;
   margin: 1rem;
 }
+
+.btnsContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}

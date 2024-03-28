@@ -44,7 +44,6 @@
   padding: 0.5rem;
   border-radius: 40px;
   visibility: hidden;
-  transition: opacity 1s ease 0s;
 }
 
 .viewCartBtn:hover > .tooltip {

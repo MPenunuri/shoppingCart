@@ -1,0 +1,28 @@
+.btnsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.addBtn {
+  background-color: green;
+  color: white;
+  box-shadow: 2px 2px 10px 0px green;
+  transition: all 1s ease;
+}
+
+.removeBtn {
+  background-color: darkgoldenrod;
+  color: white;
+  box-shadow: 2px 2px 10px 0px darkgoldenrod;
+  transition: all 1s ease;
+}
+
+.deleteBtn {
+  background-color: brown;
+  color: white;
+  box-shadow: 2px 2px 10px 0px brown;
+  transition: all 1s ease;
+}

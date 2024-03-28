@@ -1,5 +1,5 @@
 .infoContainer {
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,8 +23,8 @@
 .propGrid {
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0rem;
   border-radius: 20px;
   border: 2px solid var(--main-effect-color);
   box-shadow: 4px 4px 4px var(--sec-effect-color);
@@ -49,6 +49,10 @@
   .profileContainer > div {
     flex-direction: column;
     width: 95%;
+  }
+
+  .infoContainer {
+    flex-direction: column;
   }
 
   .gridsContainer {

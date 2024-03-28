@@ -4,7 +4,7 @@ const reducer = (state, action) => {
       return { ...state, visitor: action.payload };
     case "SET_USER":
       return { ...state, user: action.payload };
-    case "ADD_PRODUCT_TO_CART":
+    case "SET_CART":
       return {
         ...state,
         cart: action.payload,

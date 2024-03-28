@@ -88,7 +88,7 @@
   color: var(--sec-static-color);
   width: 5rem;
   border-radius: 40px;
-  opacity: 0;
+  visibility: hidden;
   transition: opacity 1s ease 0s;
 }
 

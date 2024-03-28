@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../UserContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 import styles from "./Profile/Profile.module.css";
 
-export default function Profile({ user }) {
-  Profile.propTypes = {
-    user: PropTypes.object,
-  };
+export default function Profile() {
+  const { state } = useContext(UserContext);
+  const { user } = state;
 
   const [imgSrc, setImageSrc] = useState();
 
@@ -28,7 +27,10 @@ export default function Profile({ user }) {
           onClick={() => navigate("/user")}
         >
           <img src={imgSrc} alt="User icon" className={styles.userIcon} />
-          <p>{user.username}</p>
+          <p>
+            {user.username}
+            <span className={styles.tooltip}>View cart and user data</span>
+          </p>
         </button>
       ) : (
         <button

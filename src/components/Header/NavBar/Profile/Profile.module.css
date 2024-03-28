@@ -18,3 +18,20 @@
 .userIcon {
   width: 2rem;
 }
+
+.tooltip {
+  position: absolute;
+  bottom: -10px;
+  right: 70px;
+  background-color: var(--main-static-color);
+  box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
+  color: var(--sec-static-color);
+  width: 6rem;
+  padding: 0.5rem;
+  border-radius: 40px;
+  visibility: hidden;
+}
+
+.profileBtn:hover > p > .tooltip {
+  visibility: visible;
+}

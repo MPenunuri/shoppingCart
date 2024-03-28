@@ -1,14 +1,10 @@
-import { useContext } from "react";
-import { UserContext } from "../UserContextProvider.jsx";
 import { useLocation } from "react-router-dom";
 import SearchBar from "./NavBar/SearchBar.jsx";
 import Profile from "./NavBar/Profile.jsx";
 import ChangeCategoryBtn from "./NavBar/ChangeCategoryBtn.jsx";
-import "./NavBar/NavBar.css";
+import styles from "./NavBar/NavBar.module.css";
 
 export default function NavBar() {
-  const { state, dispatch } = useContext(UserContext);
-  const { user, visitor, cart } = state;
   const location = useLocation();
   return (
     <nav>
@@ -16,8 +12,10 @@ export default function NavBar() {
       {location.pathname !== "/home" && (
         <>
           <SearchBar />
-          <Profile user={user} visitor={visitor} />
-          <ChangeCategoryBtn />
+          <div className={styles.btnsContainer} aria-hidden="true">
+            <Profile />
+            <ChangeCategoryBtn />
+          </div>
         </>
       )}
     </nav>
