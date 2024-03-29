@@ -1,0 +1,48 @@
+.generalContainer {
+  border-radius: 40px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
+  background-color: var(--sec-static-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.header {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.usersContainer,
+.userContainer,
+.propContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.usersContainer {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.userContainer {
+  border-radius: 40px;
+  border: 2px solid var(--main-effect-color);
+  box-shadow: 4px 4px 20px 2px var(--sec-effect-color);
+  background-color: var(--sec-static-color);
+  padding: 1rem;
+}
+
+.propContainer {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.propContainer p:nth-child(1) {
+  font-weight: bolder;
+}

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loading from "../components/Loading.jsx";
 import LoginInterface from "./Login/LoginInterface.jsx";
+import TestData from "./User/TestData.jsx";
 
 export default function Login({ state, dispatch }) {
   Login.propTypes = {
@@ -50,10 +51,13 @@ export default function Login({ state, dispatch }) {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <LoginInterface
-      dataUser={dataUser}
-      userValidation={userValidation}
-      setUserValidation={setUserValidation}
-    />
+    <>
+      <LoginInterface
+        dataUser={dataUser}
+        userValidation={userValidation}
+        setUserValidation={setUserValidation}
+      />
+      <TestData />
+    </>
   );
 }
