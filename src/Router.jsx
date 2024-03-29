@@ -13,6 +13,7 @@ import FilteredProducts from "./routes/FilteredProducts.jsx";
 import User from "./routes/User.jsx";
 import Cart from "./routes/Cart.jsx";
 import SetUserCart from "./routes/SetUserCart.jsx";
+import AddProductToCart from "./routes/AddProductToCart.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -46,6 +47,7 @@ export default function Router() {
       children: [
         { index: true, element: <User /> },
         { path: "cart", element: <Cart /> },
+        { path: "cart/add/:productid", element: <AddProductToCart /> },
       ],
     },
     {

@@ -46,9 +46,11 @@ export default function Product({ product }) {
             type="button"
             aria-label="Add to cart button"
             className={styles.cartBtn}
+            onClick={() => navigate(`/user/cart/add/${product.id}`)}
           >
             <img src={cartImgSrc} alt="Cart icon" />
             <p className={styles.tooltip}>Add to cart</p>
+            <p className={styles.tooltip}>Added to cart</p>
           </button>
         )}
       </div>

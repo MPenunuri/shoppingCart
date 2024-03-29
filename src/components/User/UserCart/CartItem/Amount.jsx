@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import formatAmount from "../formatAmount.js";
 
 export default function Amount({ styles, data, quantity }) {
   Amount.propTypes = {
@@ -14,7 +15,7 @@ export default function Amount({ styles, data, quantity }) {
     >
       <p id="amountLabel">Amount:</p>
       <p id="amount" aria-labelledby="amount">
-        {parseFloat(data.price) * parseFloat(quantity)}
+        {formatAmount(parseFloat(data.price) * parseFloat(quantity))}
       </p>
     </div>
   );

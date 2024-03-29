@@ -6,6 +6,7 @@ import Head from "./CartItem/Head.jsx";
 import Props from "./CartItem/Props.jsx";
 import Amount from "./CartItem/Amount.jsx";
 import Buttons from "./CartItem/Buttons.jsx";
+import formatAmount from "./formatAmount.js";
 
 export default function CartItem({ product }) {
   CartItem.propTypes = {
@@ -29,7 +30,11 @@ export default function CartItem({ product }) {
   return (
     <div aria-label="cart item" className={styles.cartItem}>
       <Head styles={styles} data={data} />
-      <Props styles={styles} tag="Price per unit" content={data.price} />
+      <Props
+        styles={styles}
+        tag="Price per unit"
+        content={formatAmount(data.price)}
+      />
       <Props styles={styles} tag="Quantity" content={quantity} />
       <Amount styles={styles} data={data} quantity={quantity} />
       <Buttons />

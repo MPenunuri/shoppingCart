@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useMemo, useState } from "react";
 import getProducts from "./getProducts.js";
+import formatAmount from "./formatAmount.js";
 
 export default function TotalAmount({ styles, cart }) {
   TotalAmount.propTypes = {
@@ -30,9 +31,11 @@ export default function TotalAmount({ styles, cart }) {
         });
         return { uprice: complementaryData.price, quantity: p.quantity };
       });
-      return fullItemsFinancialData.reduce(
-        (total, product) => total + product.uprice * product.quantity,
-        0
+      return formatAmount(
+        fullItemsFinancialData.reduce(
+          (total, product) => total + product.uprice * product.quantity,
+          0
+        )
       );
     }
   }, [items, products]);
