@@ -41,7 +41,7 @@ export default function Product({ product }) {
           <img src={viewImgSrc} alt="Details icon" />
           <p className={styles.tooltip}>View details</p>
         </button>
-        {state.user !== undefined && (
+        {state.user && (
           <button
             type="button"
             aria-label="Add to cart button"
