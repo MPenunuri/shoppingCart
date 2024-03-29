@@ -37,7 +37,7 @@ export default function CartItem({ product }) {
       />
       <Props styles={styles} tag="Quantity" content={quantity} />
       <Amount styles={styles} data={data} quantity={quantity} />
-      <Buttons />
+      <Buttons id={productId} />
     </div>
   );
 }
