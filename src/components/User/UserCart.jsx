@@ -14,7 +14,7 @@ export default function UserCart() {
 
   return (
     <section aria-label="user cart" className={styles.cartContainer}>
-      {cart ? (
+      {cart.products.length > 0 ? (
         <>
           <h2>{`Hi, ${capitalize(user.name.firstname)} ${capitalize(
             user.name.lastname
