@@ -28,7 +28,7 @@ export default function ChangeCategoryBtn() {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <>
+    <div className={styles.menuContainer}>
       <button
         type="button"
         aria-label="Select category"
@@ -40,9 +40,10 @@ export default function ChangeCategoryBtn() {
           Select category
         </p>
       </button>
+
       {menuVisible && (
         <Menu data={data} styles={styles} setMenuVisible={setMenuVisible} />
       )}
-    </>
+    </div>
   );
 }

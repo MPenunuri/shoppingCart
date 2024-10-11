@@ -60,19 +60,22 @@ button:hover {
   transition: all 0.5s ease;
 }
 
-*,
-*:not(*.addDisable) {
-  animation: setVisible 1s ease 0.3s;
+section:not(*.addDisable),
+article:not(*.addDisable) {
+  animation: setVisible 0.5s ease 0.3s;
   animation-fill-mode: forwards;
   transform: scale(0, 0);
+  opacity: 0;
 }
 
 @keyframes setVisible {
   from {
+    opacity: 0;
     transform: scale(0, 0);
   }
 
   to {
+    opacity: 1;
     transform: scale(1, 1);
   }
 }
@@ -80,6 +83,7 @@ button:hover {
 .addDisable {
   animation: setInvisible 0.5s ease 0s;
   animation-fill-mode: forwards;
+  opacity: 1;
   transform: scale(1, 1);
 }
 
@@ -89,6 +93,7 @@ button:hover {
   }
 
   99.9% {
+    opacity: 0;
     transform: scale(0, 0);
   }
 
